@@ -1,11 +1,9 @@
 from flask import Blueprint, jsonify
-from flask_cors import CORS
 
-from .views import BackgroundStuffAPI
+from app.api.v1.views import BackgroundStuffAPI
 
 api_v1 = Blueprint('api.v1', __name__)
 
-CORS(api_v1)
 
 background_view = BackgroundStuffAPI.as_view('background_view')
 

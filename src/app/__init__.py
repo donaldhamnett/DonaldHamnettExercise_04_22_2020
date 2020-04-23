@@ -31,16 +31,18 @@ def create_app(main=True):
     ma.init_app(app)
 
     # Register web application routes
-    from .app import main as main_blueprint
+    from app.app import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     # Register API routes
-    from .api.v1.urls import api_v1 as api_blueprint
+    from app.api.v1.urls import api_v1 as api_blueprint
     app.register_blueprint(api_blueprint, url_prefix='/api/v1')
 
-    # TODO
-    # Register Insert and Read routes
+    # Register Question Endpoints
+    from app.api.v1.questions.urls import questions as questions_blueprint
+    app.register_blueprint(questions_blueprint, url_prefix='/api/v1')
 
+    os.makedirs(os.path.dirname(current_config.LOG_FILE_LOCATION), exist_ok=True)
     log_file_handler = logging.FileHandler(current_config.LOG_FILE_LOCATION)
     formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(module)s -  %(message)s")
 

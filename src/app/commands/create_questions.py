@@ -1,16 +1,16 @@
 from flask_script import Command
 
-from src.app import db
+from app import db
 
 
 class CreateQuestionsCommand(Command):
 
     def run(self):
-        create_reports()
-        print('Reports created.')
+        create_all_tables()
+        print('Question tables created.')
 
 
-def create_reports():
+def create_all_tables():
     """ Create users """
 
     # Create all tables if not exists
