@@ -14,3 +14,5 @@ class Config(object):
     LOG_FILE_LOCATION = f'{BASE_DIR}/log/{app_name}.log'
 
     SQLALCHEMY_DATABASE_URI = f'sqlite:///{BASE_DIR}/{app_name}.sqlite'
+
+    SECRET_KEY = os.urandom(32)

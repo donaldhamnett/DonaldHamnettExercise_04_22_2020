@@ -34,10 +34,13 @@ class QuestionsAPIView(MethodView):
     def patch(self):
         response_obj = Response(mimetype='application/json')
         data = RequestHelper.get_request_data(request)
-
         try:
-            response_obj.data = DatabaseHelper.update(data)
-            response_obj.status_code = 202
+            data = DatabaseHelper.update(data)
+            # print(data)
+            # response_obj.data = data
+            #
+            # response_obj.status_code = 202
+            response_obj = data
 
         except Exception as e:
             logger.error(f'Questions: Error while processing request.\n{str(e)}\n{str(traceback.print_exc())}')

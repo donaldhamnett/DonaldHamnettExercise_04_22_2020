@@ -11,6 +11,7 @@ from config import config
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+from flask_bootstrap import Bootstrap
 
 config_name = os.environ.get("{}_env".format(app_name), 'base')
 current_config = config[config_name]
@@ -23,6 +24,9 @@ def create_app(main=True):
     app = Flask(__name__)
 
     app.config.from_object(current_config)
+
+    # Setup Flask-Bootstrap
+    Bootstrap(app)
 
     # Setup Flask-SQLAlchemy
     db.init_app(app)
@@ -41,6 +45,19 @@ def create_app(main=True):
     # Register Question Endpoints
     from app.api.v1.questions.urls import questions as questions_blueprint
     app.register_blueprint(questions_blueprint, url_prefix='/api/v1')
+
+    # Register Landing Page
+    from app.home import home as home_blueprint
+    app.register_blueprint(home_blueprint)
+
+    from app.create import create as create_blueprint
+    app.register_blueprint(create_blueprint)
+
+    from app.update import update as update_blueprint
+    app.register_blueprint(update_blueprint)
+
+    from app.history import history as history_blueprint
+    app.register_blueprint(history_blueprint)
 
     os.makedirs(os.path.dirname(current_config.LOG_FILE_LOCATION), exist_ok=True)
     log_file_handler = logging.FileHandler(current_config.LOG_FILE_LOCATION)
