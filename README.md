@@ -9,7 +9,7 @@
 ### Usage Instructions
 Opening `localhost:5000` in your browser will bring you to the home page. There are 3 navigation options other than the home page:
 * **Create** (`localhost:5000/create`) allows you to enter a new question into the database. 
-* **Update** (`localhost:5000/update`) allows you to change question text given its ID. `localhost:5000`
+* **Update** (`localhost:5000/update`) allows you to change question text given its ID. 
 * **History** (`localhost:5000/history`) allows you to view the changes to a question over time, given its ID.
 
 The create, update, and history functionality is also exposed via a REST API at `localhost:5000/api/v1/questions`, where their respective request types are post, patch, and get. Any required data is sent either form-encoded or as JSON.
