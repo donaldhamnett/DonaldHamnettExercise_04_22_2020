@@ -1,0 +1,11 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}Error{% endblock %}
+{% block body %}
+<div class="content-section">
+  <div class="center">
+      <h1>Oops, there was an error!</h1>
+      <a class="btn btn-primary" href="{{ url_for('home.homepage') }}" role="button">Take me home!</a>
+  </div>
+</div>
+{% endblock %}
