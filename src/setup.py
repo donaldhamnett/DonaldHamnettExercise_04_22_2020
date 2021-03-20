@@ -20,7 +20,7 @@ setup(
         'Flask-WTF==0.14.3',
         'idna==2.9',
         'itsdangerous==1.1.0',
-        'Jinja2==2.11.2',
+        'Jinja2==2.11.3',
         'MarkupSafe==1.1.1',
         'marshmallow==3.5.1',
         'marshmallow-sqlalchemy==0.22.3',
