@@ -29,7 +29,7 @@ setup(
         'setuptools==46.1.3',
         'six==1.14.0',
         'SQLAlchemy==1.3.16',
-        'urllib3==1.25.9',
+        'urllib3==1.26.5',
         'visitor==0.1.3',
         'Werkzeug==1.0.1',
         'wheel==0.34.2',
