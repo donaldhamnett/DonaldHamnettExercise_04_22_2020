@@ -24,7 +24,7 @@ setup(
         'MarkupSafe==1.1.1',
         'marshmallow==3.5.1',
         'marshmallow-sqlalchemy==0.22.3',
-        'pip==20.0.2',
+        'pip==21.1',
         'requests==2.23.0',
         'setuptools==46.1.3',
         'six==1.14.0',
