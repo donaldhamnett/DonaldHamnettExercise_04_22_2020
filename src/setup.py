@@ -32,7 +32,7 @@ setup(
         'urllib3==1.25.9',
         'visitor==0.1.3',
         'Werkzeug==1.0.1',
-        'wheel==0.34.2',
+        'wheel==0.38.1',
         'WTForms==2.3.1'
     ],
 )
