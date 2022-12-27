@@ -26,7 +26,7 @@ setup(
         'marshmallow-sqlalchemy==0.22.3',
         'pip==20.0.2',
         'requests==2.23.0',
-        'setuptools==46.1.3',
+        'setuptools==65.5.1',
         'six==1.14.0',
         'SQLAlchemy==1.3.16',
         'urllib3==1.25.9',
